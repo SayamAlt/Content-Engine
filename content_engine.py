@@ -10,6 +10,8 @@ from langchain.retrievers.multi_query import MultiQueryRetriever
 import os, logging
 from dotenv import load_dotenv
 
+os.environ["PROTOCOL_BUFFERS_PYTHON_IMPLEMENTATION"] = "python"
+
 load_dotenv()
 
 # Load API key from Streamlit secrets
