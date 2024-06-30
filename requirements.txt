@@ -6,3 +6,4 @@ transformers
 torch
 langchain-community
 python-dotenv
+pypdf
