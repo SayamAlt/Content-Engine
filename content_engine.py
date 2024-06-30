@@ -2,7 +2,7 @@ import streamlit as st
 from langchain.chains import LLMChain
 from langchain_community.document_loaders import PyPDFDirectoryLoader
 from langchain.embeddings.sentence_transformer import SentenceTransformerEmbeddings
-from langchain.vectorstores.chroma import Chroma
+from langchain_chroma import Chroma
 from langchain.text_splitter import RecursiveCharacterTextSplitter
 from langchain_core.prompts import PromptTemplate
 from langchain_community.llms import HuggingFaceHub
@@ -30,7 +30,7 @@ splitter = RecursiveCharacterTextSplitter(chunk_size=1000,chunk_overlap=0)
 docs = splitter.split_documents(pdfs)
 
 embeddings = SentenceTransformerEmbeddings(model_name='all-MiniLM-L6-v2')
-db = Chroma(persist_directory='db',embedding_function=embeddings)
+db = Chroma(persist_directory='./db',embedding_function=embeddings)
 
 model_path = "openai-community/gpt2"
 
