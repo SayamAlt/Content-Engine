@@ -48,7 +48,7 @@ Implement functions to persist embeddings into ChromaDB vector store.
 
 ### 3. Development
 #### Configuring Query Engine
-Define retrieval tasks based on document embeddings using Pinecone.
+Define retrieval tasks based on document embeddings using ChromaDB.
 
 #### Integrating LLM
 Set up a local instance of a Large Language Model (LLM) for contextual insights.
