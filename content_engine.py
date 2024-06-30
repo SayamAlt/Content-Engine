@@ -13,12 +13,12 @@ from dotenv import load_dotenv
 load_dotenv()
 
 # Load API key from Streamlit secrets
-HUGGINGFACEHUB_API_KEY = os.getenv("HUGGINGFACEHUB_API_KEY")
+HUGGINGFACEHUB_API_TOKEN = os.getenv("HUGGINGFACEHUB_API_TOKEN")
 
-if HUGGINGFACEHUB_API_KEY == None:
-    HUGGINGFACEHUB_API_KEY = st.secrets["HUGGINGFACEHUB_API_KEY"]
+if HUGGINGFACEHUB_API_TOKEN == None:
+    HUGGINGFACEHUB_API_TOKEN = st.secrets["HUGGINGFACEHUB_API_TOKEN"]
 
-os.environ["HUGGINGFACEHUB_API_TOKEN"] = HUGGINGFACEHUB_API_KEY
+os.environ["HUGGINGFACEHUB_API_TOKEN"] = HUGGINGFACEHUB_API_TOKEN
 
 loader = PyPDFDirectoryLoader(path='pdfs/',glob="**/*.pdf")
 pdfs = loader.load()
